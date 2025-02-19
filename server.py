@@ -85,6 +85,5 @@ def phishing_alerta_index():
     return send_file("phishing-alerta-index.html")
 
 if __name__ == '__main__':
-    port = int(os.getenv("PORT"))  # Sin valor por defecto
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(debug=True)
 
