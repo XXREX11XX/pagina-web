@@ -82,6 +82,11 @@ def iniciar_sesion():
     
     return jsonify({'success': False, 'message': 'Usuario o contraseña incorrectos'}), 401
 
+@app.route("/ver-usuarios")
+def ver_usuarios():
+    usuarios = cargar_usuarios()
+    return jsonify(usuarios)
+
 @app.route("/advertencia-index.html")
 def advertencia_index():
     return send_file("advertencia-index.html")
@@ -92,3 +97,4 @@ def phishing_alerta_index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
