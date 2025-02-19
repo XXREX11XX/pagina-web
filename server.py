@@ -84,9 +84,7 @@ def advertencia_index():
 def phishing_alerta_index():
     return send_file("phishing-alerta-index.html")
 
-import os
-
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Render asigna un puerto automáticamente
+    port = int(os.getenv("PORT"))  # Sin valor por defecto
     app.run(host='0.0.0.0', port=port, debug=True)
 
